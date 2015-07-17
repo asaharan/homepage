@@ -1,0 +1,40 @@
+@include keyframes(bounceInDown){
+	0%{
+		@include transform(scale(0.9) translateY(-100%));
+		opacity: 0.2;
+	}
+	100%{
+		@include transform(none);
+		opacity: 1;
+	}
+}
+@include keyframes(fadeInZoom){
+	from{
+		opacity: 0;
+		@include transform(scale(0.2));
+	}
+	to{
+		opacity: 1;
+		@include transform(none);
+	}
+}
+@include keyframes(widthChanger){
+	from{
+		width: 65%;
+		opacity: 0;
+		@include transform(translateY(30px));
+	}
+	to{
+		opacity: 1;
+		@include transform(none);
+		width: 0%;
+	}
+}
+@include keyframes(fadeIn){
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}

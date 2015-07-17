@@ -1,0 +1,27 @@
+$large:960px;//larger than $large is large
+$medium:600px;//larger than $medium is medium, else false
+
+$ff:roboto;//font-family
+$bg-c:#f0f0f0;
+/*
+*left-container variable here
+*/
+$lc-w:	300px;
+$lc-bg-s:	#296ad4;//lc background start color
+$lc-bg-e:	#4e8ef7;//lc bg end color
+$nc-c:	#fff;//name container color
+$nc-fs: 24px;//nc font size
+
+$sc-fs:30px;
+$sc-h:50px;
+
+
+/*
+right container variables
+*/
+$tc-h:60px;
+$tc-bg:$lc-bg-s;
+$tc-c:$nc-c;
+
+$sfc-h:34px;
+$sb-w: 80%;
