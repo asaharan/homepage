@@ -1,3 +1,4 @@
+$minWidth:auto;
 $fa-font-path: "../com/font-awesome/fonts";
 @import "../com/roboto-fontface/css/roboto-fontface";
 @import "../com/font-awesome/scss/font-awesome";
@@ -6,38 +7,31 @@ $fa-font-path: "../com/font-awesome/fonts";
 @import "base";
 @import "animations";
 body{
-	background-color:$bg-c;
 	@extend .clear;
-	display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content:flex-start;
-}
-.ot{
-	flex-grow:1;
-	display:flex;
-	flex-direction:row;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-wrap:nowrap;
-	@media(max-width:900px){
-		flex-wrap: wrap;
-	}
+	@include display(flex);
+    @include justify-content(flex-start);
+    @include align-items(flex-start);
+    @include flex-direction( row);
+    @include flex-wrap( wrap);
+    @include align-content(flex-start);
+    @include flex-basis( 100%);
+    min-height: 100%;
 }
 .lc{//left-container
-	display:inline-block;
-	flex-grow:1;
-	order:1;
-	min-height:100%;
-	padding:15px 10px;
+	@include flex-grow(1);
+	@include order(1);
+	@include display(flex);
+	@include align-content(space-around);
+	@include flex-direction(column);
+	min-width:100%;
+	padding:0 10px;
 	box-shadow:2px 0 3px rgba(0,0,0,0.1);
+	// flex:1;
 	@include background-image(linear-gradient(to bottom,$lc-bg-s 0%,$lc-bg-e 100%));
 	.avc{
 		//avtar container
 		display: block;
-		margin-top: 50px;
+		margin: 10px 0 ;
 		text-align: center;
 		.avci{
 			//avc inner
@@ -56,6 +50,7 @@ body{
 		}
 	}
 	.info{
+		margin: 0 0 5px;
 		@include animation(fadeIn 1000ms ease-out);
 		text-align: center;
 		text-shadow: 1px 1px rgba(255, 255, 255, 0.33);
@@ -73,7 +68,7 @@ body{
 	}
 	.sc{
 		position:relative;
-		margin-top: 20px;
+		margin-top: 5px;
 		text-align: center;
 		font-size: $sc-fs;
 		a{
@@ -98,6 +93,7 @@ body{
 	}
 	.qc{
 		margin-top: 20px;
+		margin-bottom: 20px;
 		color: $nc-c;
 		text-align: center;
 		font-size: $nc-fs/1.4;
@@ -123,34 +119,55 @@ body{
 			}
 		}
 	}
-}
-
-.rc{//right-container
-	order:2;
-	display:inline-block;
-	// width:calc(100% - #{$lc-w + 3px});
-	// float:left;
-	flex-grow:1;
-	color:$tc-c;
-	.mc{
-		text-align: center;
-		.tile{
-			position: relative;
-			display:inline-block;
-			width: 300px;
-			height: 180px;
-			background-color:white;
-			margin:10px;
+	.ttc{
+		@include display(flex);
+		@include align-content(space-around);
+		@include flex-direction(row);
+		@include justify-content(space-around);
+		.tt{
+			cursor: pointer;
+			padding:10px 25px;
+			border-radius: 3px;
+			border-radius: 50px;
+			@include transition(all ease 0.3s);
+			background-color:$nc-c;
+			border:solid 1px;
+			color: lighten($lc-bg-s,10%);
+			margin-bottom: 20px;
+			&:hover{
+				@include transform(scale(1.2,1.0));
+				border-radius: 50px;
+			}
 		}
+	}
+}
+.rc{
+	@include order(2);
+	@include display(flex);
+	@include flex-grow(1);
+	@include justify-content(space-around);
+	@include align-items(center);
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
+	min-width:100%;
+	background-color:darken($lc-bg-s,15%);
+	padding:20px 0;
+	color:$nc-c;
+	a{
+		order:1;
+		flex-grow: 2;
+		flex-shrink: 1;
 	}
 }
 .tc{
 	//top-container
-	flex-grow:1;
+	@include order(1);
+	@include flex-grow(3);
+	@include display(flex);
 	position:relative;
-	display: block;
 	height: $tc-h;
 	line-height: $tc-h;
+	min-width:100%;
 	background-color:$tc-bg;
 	border-radius: 0;
 	.sfc{
@@ -160,7 +177,7 @@ body{
 		height: $sfc-h;
 		width: 100%;
 		line-height: $sfc-h;
-		margin-top: ($tc-h - $sfc-h)/2;
+		margin: ($tc-h - $sfc-h)/2 0;
 		text-align: center;
 		form{
 			color: $tc-c;
@@ -186,7 +203,7 @@ body{
 				cursor: pointer;
 				$x: 100 - $sb-w;
 				position:absolute;
-				right: calc( #{$x / 2} + #{4px});
+				right: calc( #{$x / 2} + #{3px});
 				height: $sfc-h - 6px;
 				width: 60px;
 				top: 4px;

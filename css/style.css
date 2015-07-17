@@ -1922,8 +1922,7 @@ body, html {
   font-family: roboto;
   display: inline-block;
   margin: 0;
-  height: 100%;
-  min-width: 600px; }
+  min-width: auto; }
 
 body {
   min-width: 100%; }
@@ -2059,37 +2058,99 @@ a {
   to {
     opacity: 1; } }
 body {
-  background-color: #f0f0f0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
   justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
   align-items: flex-start;
+  -ms-flex-align: start;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
   flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  align-content: flex-start; }
-
-.ot {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: nowrap; }
-  @media (max-width: 900px) {
-    .ot {
-      flex-wrap: wrap; } }
+  -webkit-align-content: flex-start;
+  -moz-align-content: flex-start;
+  align-content: flex-start;
+  -ms-flex-line-pack: start;
+  -webkit-flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  min-height: 100%; }
 
 .lc {
-  display: inline-block;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
   flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  box-ordinal-group: 1;
+  -webkit-order: 1;
+  -moz-order: 1;
   order: 1;
-  min-height: 100%;
-  padding: 15px 10px;
+  -ms-flex-order: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: space-around;
+  -moz-align-content: space-around;
+  align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  min-width: 100%;
+  padding: 0 10px;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1);
   background-image: -webkit-linear-gradient( top , #296ad4 0%, #4e8ef7 100%);
   background-image: linear-gradient(to bottom, #296ad4 0%, #4e8ef7 100%); }
   .lc .avc {
     display: block;
-    margin-top: 50px;
+    margin: 10px 0;
     text-align: center; }
     .lc .avc .avci {
       display: inline-block;
@@ -2105,6 +2166,7 @@ body {
         width: inherit;
         height: inherit; }
   .lc .info {
+    margin: 0 0 5px;
     -webkit-animation: fadeIn 1000ms ease-out;
     -moz-animation: fadeIn 1000ms ease-out;
     animation: fadeIn 1000ms ease-out;
@@ -2120,7 +2182,7 @@ body {
       font-size: 16px; }
   .lc .sc {
     position: relative;
-    margin-top: 20px;
+    margin-top: 5px;
     text-align: center;
     font-size: 30px; }
     .lc .sc a {
@@ -2146,6 +2208,7 @@ body {
         background-color: #2155a9; }
   .lc .qc {
     margin-top: 20px;
+    margin-bottom: 20px;
     color: #fff;
     text-align: center;
     font-size: 17.14286px; }
@@ -2195,28 +2258,143 @@ body {
         height: 2px;
         background-color: #fff;
         display: inline-block; }
+  .lc .ttc {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: space-around;
+    -moz-align-content: space-around;
+    align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-pack: distribute;
+    -moz-box-pack: distribute;
+    box-pack: distribute;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+    -ms-flex-pack: distribute; }
+    .lc .ttc .tt {
+      cursor: pointer;
+      padding: 10px 25px;
+      border-radius: 3px;
+      border-radius: 50px;
+      -webkit-transition: all ease 0.3s;
+      -moz-transition: all ease 0.3s;
+      transition: all ease 0.3s;
+      background-color: #fff;
+      border: solid 1px;
+      color: #5287de;
+      margin-bottom: 20px; }
+      .lc .ttc .tt:hover {
+        -webkit-transform: scale(1.2, 1);
+        -moz-transform: scale(1.2, 1);
+        -ms-transform: scale(1.2, 1);
+        -o-transform: scale(1.2, 1);
+        transform: scale(1.2, 1);
+        border-radius: 50px; }
 
 .rc {
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  box-ordinal-group: 2;
+  -webkit-order: 2;
+  -moz-order: 2;
   order: 2;
-  display: inline-block;
+  -ms-flex-order: 2;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
   flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-box-pack: distribute;
+  -moz-box-pack: distribute;
+  box-pack: distribute;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: distribute;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-width: 100%;
+  background-color: #1d4a94;
+  padding: 20px 0;
   color: #fff; }
-  .rc .mc {
-    text-align: center; }
-    .rc .mc .tile {
-      position: relative;
-      display: inline-block;
-      width: 300px;
-      height: 180px;
-      background-color: white;
-      margin: 10px; }
+  .rc a {
+    order: 1;
+    flex-grow: 2;
+    flex-shrink: 1; }
 
 .tc {
-  flex-grow: 1;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  box-ordinal-group: 1;
+  -webkit-order: 1;
+  -moz-order: 1;
+  order: 1;
+  -ms-flex-order: 1;
+  -webkit-flex-grow: 3;
+  -moz-flex-grow: 3;
+  flex-grow: 3;
+  -ms-flex-positive: 3;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
-  display: block;
   height: 60px;
   line-height: 60px;
+  min-width: 100%;
   background-color: #296ad4;
   border-radius: 0; }
   .tc .sfc {
@@ -2226,7 +2404,7 @@ body {
     height: 34px;
     width: 100%;
     line-height: 34px;
-    margin-top: 13px;
+    margin: 13px 0;
     text-align: center; }
     .tc .sfc form {
       color: #fff; }
@@ -2257,7 +2435,7 @@ body {
       .tc .sfc form button {
         cursor: pointer;
         position: absolute;
-        right: calc( 10% + 4px);
+        right: calc( 10% + 3px);
         height: 28px;
         width: 60px;
         top: 4px;

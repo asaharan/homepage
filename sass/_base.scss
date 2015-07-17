@@ -5,8 +5,8 @@ body,html{
 	font-family:$ff;
 	display:inline-block;
 	margin:	0;
-	height:100%;
-	min-width:600px;
+	// height:100%;
+	min-width:$minWidth;
 }
 body{
 	min-width:100%;
