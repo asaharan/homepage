@@ -9,17 +9,27 @@ body{
 	background-color:$bg-c;
 	@extend .clear;
 	display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
-    flex-wrap: nowrap;
-   	@media(max-width:900px){
-   		flex-wrap: wrap;
-   	}
+    flex-wrap: wrap;
+    align-content:flex-start;
+}
+.ot{
+	flex-grow:1;
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap:nowrap;
+	@media(max-width:900px){
+		flex-wrap: wrap;
+	}
 }
 .lc{//left-container
 	display:inline-block;
 	flex-grow:1;
+	order:1;
 	min-height:100%;
 	padding:15px 10px;
 	box-shadow:2px 0 3px rgba(0,0,0,0.1);
@@ -116,63 +126,12 @@ body{
 }
 
 .rc{//right-container
+	order:2;
 	display:inline-block;
 	// width:calc(100% - #{$lc-w + 3px});
 	// float:left;
 	flex-grow:1;
 	color:$tc-c;
-	.tc{
-		//top-container
-		position:relative;
-		display: block;
-		height: $tc-h;
-		line-height: $tc-h;
-		background-color:$tc-bg;
-		border-radius: 0;
-		.sfc{
-			display: block;
-			float: left;
-			position:relative;
-			height: $sfc-h;
-			width: 100%;
-			line-height: $sfc-h;
-			margin-top: ($tc-h - $sfc-h)/2;
-			text-align: center;
-			form{
-				color: $tc-c;
-				input{
-					outline: none;
-					background-color:rgba(255,255,255,0.2);
-					border:solid 1px rgba(255,255,255,0.4);
-					// box-shadow:0 0 5px rgba(0,0,0,0.16);
-					height: $sfc-h;
-					width: $sb-w;
-					border-radius: $sfc-h;
-					padding:0 15px;
-					@include placeholder{
-						color: #ddd;
-					}
-					&:focus{
-						@include placeholder{
-							color: #fff;
-						}	
-					}
-				}
-				button{
-					cursor: pointer;
-					$x: 100 - $sb-w;
-					position:absolute;
-					right: calc( #{$x / 2} + #{4px});
-					height: $sfc-h - 6px;
-					width: 60px;
-					top: 4px;
-					border:solid 1px rgba(255,255,255,0.4);
-					background-color:rgba(255,255,255,0.2);
-					border-radius: $sc-h / 2;
-				}
-			}
-		}
-	}
 	.mc{
 		text-align: center;
 		.tile{
@@ -182,6 +141,59 @@ body{
 			height: 180px;
 			background-color:white;
 			margin:10px;
+		}
+	}
+}
+.tc{
+	//top-container
+	flex-grow:1;
+	position:relative;
+	display: block;
+	height: $tc-h;
+	line-height: $tc-h;
+	background-color:$tc-bg;
+	border-radius: 0;
+	.sfc{
+		display: block;
+		float: left;
+		position:relative;
+		height: $sfc-h;
+		width: 100%;
+		line-height: $sfc-h;
+		margin-top: ($tc-h - $sfc-h)/2;
+		text-align: center;
+		form{
+			color: $tc-c;
+			input{
+				outline: none;
+				background-color:rgba(255,255,255,0.2);
+				border:solid 1px rgba(255,255,255,0.4);
+				// box-shadow:0 0 5px rgba(0,0,0,0.16);
+				height: $sfc-h;
+				width: $sb-w;
+				border-radius: $sfc-h;
+				padding:0 15px;
+				@include placeholder{
+					color: #ddd;
+				}
+				&:focus{
+					@include placeholder{
+						color: #fff;
+					}	
+				}
+			}
+			button{
+				cursor: pointer;
+				$x: 100 - $sb-w;
+				position:absolute;
+				right: calc( #{$x / 2} + #{4px});
+				height: $sfc-h - 6px;
+				width: 60px;
+				top: 4px;
+				border:solid 1px rgba(255,255,255,0.4);
+				background-color:rgba(255,255,255,0.2);
+				border-radius: $sc-h / 2;
+			}
 		}
 	}
 }

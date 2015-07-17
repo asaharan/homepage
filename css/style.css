@@ -2061,17 +2061,27 @@ a {
 body {
   background-color: #f0f0f0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start; }
+
+.ot {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: nowrap; }
   @media (max-width: 900px) {
-    body {
+    .ot {
       flex-wrap: wrap; } }
 
 .lc {
   display: inline-block;
   flex-grow: 1;
+  order: 1;
   min-height: 100%;
   padding: 15px 10px;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1);
@@ -2187,61 +2197,10 @@ body {
         display: inline-block; }
 
 .rc {
+  order: 2;
   display: inline-block;
   flex-grow: 1;
   color: #fff; }
-  .rc .tc {
-    position: relative;
-    display: block;
-    height: 60px;
-    line-height: 60px;
-    background-color: #296ad4;
-    border-radius: 0; }
-    .rc .tc .sfc {
-      display: block;
-      float: left;
-      position: relative;
-      height: 34px;
-      width: 100%;
-      line-height: 34px;
-      margin-top: 13px;
-      text-align: center; }
-      .rc .tc .sfc form {
-        color: #fff; }
-        .rc .tc .sfc form input {
-          outline: none;
-          background-color: rgba(255, 255, 255, 0.2);
-          border: solid 1px rgba(255, 255, 255, 0.4);
-          height: 34px;
-          width: 80%;
-          border-radius: 34px;
-          padding: 0 15px; }
-          .rc .tc .sfc form input::-webkit-input-placeholder {
-            color: #ddd; }
-          .rc .tc .sfc form input::-moz-placeholder {
-            color: #ddd; }
-          .rc .tc .sfc form input:-moz-placeholder {
-            color: #ddd; }
-          .rc .tc .sfc form input:-ms-input-placeholder {
-            color: #ddd; }
-          .rc .tc .sfc form input:focus::-webkit-input-placeholder {
-            color: #fff; }
-          .rc .tc .sfc form input:focus::-moz-placeholder {
-            color: #fff; }
-          .rc .tc .sfc form input:focus:-moz-placeholder {
-            color: #fff; }
-          .rc .tc .sfc form input:focus:-ms-input-placeholder {
-            color: #fff; }
-        .rc .tc .sfc form button {
-          cursor: pointer;
-          position: absolute;
-          right: calc( 10% + 4px);
-          height: 28px;
-          width: 60px;
-          top: 4px;
-          border: solid 1px rgba(255, 255, 255, 0.4);
-          background-color: rgba(255, 255, 255, 0.2);
-          border-radius: 25px; }
   .rc .mc {
     text-align: center; }
     .rc .mc .tile {
@@ -2251,5 +2210,59 @@ body {
       height: 180px;
       background-color: white;
       margin: 10px; }
+
+.tc {
+  flex-grow: 1;
+  position: relative;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  background-color: #296ad4;
+  border-radius: 0; }
+  .tc .sfc {
+    display: block;
+    float: left;
+    position: relative;
+    height: 34px;
+    width: 100%;
+    line-height: 34px;
+    margin-top: 13px;
+    text-align: center; }
+    .tc .sfc form {
+      color: #fff; }
+      .tc .sfc form input {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: solid 1px rgba(255, 255, 255, 0.4);
+        height: 34px;
+        width: 80%;
+        border-radius: 34px;
+        padding: 0 15px; }
+        .tc .sfc form input::-webkit-input-placeholder {
+          color: #ddd; }
+        .tc .sfc form input::-moz-placeholder {
+          color: #ddd; }
+        .tc .sfc form input:-moz-placeholder {
+          color: #ddd; }
+        .tc .sfc form input:-ms-input-placeholder {
+          color: #ddd; }
+        .tc .sfc form input:focus::-webkit-input-placeholder {
+          color: #fff; }
+        .tc .sfc form input:focus::-moz-placeholder {
+          color: #fff; }
+        .tc .sfc form input:focus:-moz-placeholder {
+          color: #fff; }
+        .tc .sfc form input:focus:-ms-input-placeholder {
+          color: #fff; }
+      .tc .sfc form button {
+        cursor: pointer;
+        position: absolute;
+        right: calc( 10% + 4px);
+        height: 28px;
+        width: 60px;
+        top: 4px;
+        border: solid 1px rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 25px; }
 
 /*# sourceMappingURL=style.css.map */
