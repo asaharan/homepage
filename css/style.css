@@ -2066,7 +2066,7 @@ a {
   100% {
     opacity: 1; } }
 body {
-  background-color: #fff;
+  background-color: #f7f7f7;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
