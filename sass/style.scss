@@ -10,7 +10,7 @@ body{
 	@extend .clear;
 	display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: row;
     flex-wrap: nowrap;
    	@media(max-width:900px){
@@ -18,6 +18,7 @@ body{
    	}
 }
 .lc{//left-container
+	min-width:350px;
 	display:inline-block;
 	flex-grow:1;
 	min-height:100%;
@@ -46,7 +47,7 @@ body{
 		}
 	}
 	.info{
-		@include animation(fadeIn 1000ms ease-out);
+		@include animation(fadeIn 1000ms ease-in);
 		text-align: center;
 		text-shadow: 1px 1px rgba(255, 255, 255, 0.33);
 		.nc{
@@ -115,73 +116,100 @@ body{
 	}
 }
 
-.rc{//right-container
-	display:inline-block;
-	// width:calc(100% - #{$lc-w + 3px});
-	// float:left;
-	flex-grow:1;
-	color:$tc-c;
+.rc{
+	display: flex;
+	flex-grow: 1;
+	color: #000;
+	background-color: #fafafa;
+	flex-direction: column;
+	align-items:stretch;
+	justify-content: center;
 	.tc{
-		//top-container
 		position:relative;
-		display: block;
+		min-width: 100%;
 		height: $tc-h;
-		line-height: $tc-h;
-		background-color:$tc-bg;
-		border-radius: 0;
+		height: 60px;
+		line-height:60px;
+		text-align: center;
 		.sfc{
-			display: block;
-			float: left;
-			position:relative;
-			height: $sfc-h;
-			width: 100%;
-			line-height: $sfc-h;
-			margin-top: ($tc-h - $sfc-h)/2;
-			text-align: center;
+			min-width: 70%;
+			height: 35;
 			form{
-				color: $tc-c;
+				width: 100%;
 				input{
 					outline: none;
-					background-color:rgba(255,255,255,0.2);
-					border:solid 1px rgba(255,255,255,0.4);
-					// box-shadow:0 0 5px rgba(0,0,0,0.16);
+					border:none;
+					border-radius: 3px;
 					height: $sfc-h;
-					width: $sb-w;
-					border-radius: $sfc-h;
 					padding:0 15px;
-					@include placeholder{
-						color: #ddd;
-					}
-					&:focus{
-						@include placeholder{
-							color: #fff;
-						}	
-					}
-				}
-				button{
-					cursor: pointer;
-					$x: 100 - $sb-w;
-					position:absolute;
-					right: calc( #{$x / 2} + #{4px});
-					height: $sfc-h - 6px;
-					width: 60px;
-					top: 4px;
-					border:solid 1px rgba(255,255,255,0.4);
-					background-color:rgba(255,255,255,0.2);
-					border-radius: $sc-h / 2;
+					width: 80%;
+					max-width: 500px;
+					background-color:rgb(250,250,250);
+					box-shadow:0 3px 1px -2px rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0 rgba(0,0,0,.084);
 				}
 			}
 		}
 	}
 	.mc{
+		display: flex;
+		justify-content: center;
+		align-items:center;
 		text-align: center;
+		flex-wrap: wrap;
 		.tile{
+			cursor: pointer;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items:center;
+			i{
+				font-size: 100px;
+				// color: #666667;
+			}
+			img{
+				height: 100px;
+			}
+			padding:20px;
+			color: #999;
 			position: relative;
-			display:inline-block;
-			width: 300px;
+			width: 200px;
 			height: 180px;
-			background-color:white;
-			margin:10px;
+			margin:20px;
+			border:solid 1px transparent;
+			border-radius: 3px;
+			@include transition(all ease 500ms);
+			@for $i from 1 to 9{
+				&:nth-child(#{$i}){
+					@include animation(fadeInZoom ($i*($i - 1)*20+260ms)  cubic-bezier(0.49, 0.01, 0.24, 1.01));
+				}
+			}
+			&:hover{
+				border:solid 1px;
+			}
+			&.se{
+				color: rgb(34, 157, 228);
+				color: #4285F4;
+			}
+			&.pic{
+				color: #EA4335;
+			}
+			&.bit{
+				color: #FBBC05;
+				color: #EC6930;
+			}
+			&.tic{
+				color: #34A853;
+			}
+			&.tech{
+				color: #4DA6C7;
+			}
+			&.skill{
+				color: #34B99A;
+			}
+			&.sche{
+				color: #FF6666;
+			}
+
 		}
 	}
 }
